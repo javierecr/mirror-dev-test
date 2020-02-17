@@ -1,6 +1,8 @@
 # MirrorDevTest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+To install this version run `npm install -g @angular/cli@6.0.8`
+Node version used for this project is `12.14.0`. 
 
 ## Install dependencies
 Run `npm install` to install all dependencies prior to serving the project.
