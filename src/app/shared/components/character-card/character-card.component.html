@@ -1,0 +1,13 @@
+<div class="card mb-3">
+  <div class="card-content">
+    <div class="card-body">
+      <h5>{{ character.name }}</h5>
+      <hr>
+      <p>{{ character.origin.name }}</p>
+      <button type="button" class="btn btn-outline-primary btn-block"
+        [routerLink]="['/characters', character.id]">
+        More info
+      </button>
+    </div>
+  </div>
+</div>

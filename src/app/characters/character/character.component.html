@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="mb-3">
+    <button type="button" routerLink="/characters" class="btn btn-link">← Back</button>
+  </div>
+  <div class="card">
+    <div class="card-content">
+      <div class="card-body">
+        <div class="row">
+          <div class="col-xs-12 col-md-4">
+            <div>
+              <img class="rounded d-block mx-auto" [src]="character.image" [alt]="character.name">
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-8">
+            <h1 class="mb-3">{{character.name}}</h1 >
+            <table class="table">
+              <tr>
+                <td><strong>Status:</strong></td>
+                <td>{{character.status}}</td>
+              </tr>
+              <tr>
+                <td><strong>Species:</strong></td>
+                <td>{{character.species}}</td>
+              </tr>
+              <tr>
+                <td><strong>Type:</strong></td>
+                <td>{{character.type || 'Unspecified'}}</td>
+              </tr>
+              <tr>
+                <td><strong>Gender:</strong></td>
+                <td>{{character.gender}}</td>
+              </tr>
+              <tr>
+                <td><strong>Origin:</strong></td>
+                <td>{{character.origin.name}}</td>
+              </tr>
+              <tr>
+                <td><strong>Location:</strong></td>
+                <td>{{character.location.name}}</td>
+              </tr>
+              <tr>
+                <td><strong>Epsiodes:</strong></td>
+                <td>{{ character.episode.length }}</td>
+              </tr>
+              <tr>
+                <td><strong>Creation date:</strong></td>
+                <td>{{ character.formattedCreatedDate }}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
