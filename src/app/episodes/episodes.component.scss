@@ -1,0 +1,9 @@
+.episode {
+  cursor: pointer;
+  &:hover {
+    .episode--name {
+      color: #007bff;
+      text-decoration: underline;
+    }
+  }
+}
