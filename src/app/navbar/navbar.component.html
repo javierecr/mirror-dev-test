@@ -1,8 +1,19 @@
-<div class="container">
-  <ul class="navbar">
-    <li class="btn btn-link mr-2" routerLink="/home" routerLinkActive="active">Home</li>
-    <li class="btn btn-link mr-2" routerLink="/characters" routerLinkActive="active">Characters</li>
-    <li class="btn btn-link mr-2" routerLink="/episodes" routerLinkActive="active">Episodes</li>
-    <li class="btn btn-link mr-2" routerLink="/register" routerLinkActive="active">Register</li>
-  </ul>
+<div class="navbar-container" [ngClass]="{'fixed' : router.url !== '/home'}">
+  <div class="container">
+    <ul class="navbar d-none d-md-flex" >
+      <li class="btn btn-link mr-2" routerLink="/home" routerLinkActive="active">Home</li>
+      <li class="btn btn-link mr-2" routerLink="/characters" routerLinkActive="active">Characters</li>
+      <li class="btn btn-link mr-2" routerLink="/episodes" routerLinkActive="active">Episodes</li>
+      <li class="btn btn-link mr-2" routerLink="/register" routerLinkActive="active">Register</li>
+    </ul>
+    <div ngbDropdown class="d-flex justify-content-end d-md-none">
+      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>MENU</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1" placement="'bottom-left'">
+        <button class="btn btn-link" ngbDropdownItem routerLink="/home" routerLinkActive="active">Home</button>
+        <button class="btn btn-link" ngbDropdownItem routerLink="/characters" routerLinkActive="active">Characters</button>
+        <button class="btn btn-link" ngbDropdownItem routerLink="/episodes" routerLinkActive="active">Episodes</button>
+        <button class="btn btn-link" ngbDropdownItem routerLink="/register" routerLinkActive="active">Register</button>
+      </div>
+    </div>
+  </div>
 </div>

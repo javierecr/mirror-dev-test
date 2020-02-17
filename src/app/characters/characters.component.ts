@@ -4,6 +4,7 @@ import { CharactersResponse } from './responses/characters.response';
 import { Pagination } from '../shared/models/pagination';
 import { CharactersService } from '../shared/services/characters.service';
 import { Character } from '../shared/models/character';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-characters',
@@ -16,13 +17,15 @@ export class CharactersComponent implements OnInit {
   pagination: Pagination = new Pagination({})
 
   constructor(
-    private charactersService: CharactersService
+    private charactersService: CharactersService,
+    private router: Router
   ) {
     /** Do nothing */
    }
 
   ngOnInit(): void {
     this.getCharacters()
+    console.log(this.router.url)
   }
 
   private getCharacters(): void {
