@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+}
+
+form {
+  .input-group {
+    label {
+      margin-bottom: 0;
+      display: block !important;
+      width: 100%;
+    }
+    .form-control {
+      position: relative;
+      &.is-invalid {
+        border-color: red;
+        padding-right: 0;
+        background-image: none;
+      }
+      + label.error {
+        color: red;
+        margin: 4px 0;
+        font-size: 60%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+      }
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+}
