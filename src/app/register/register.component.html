@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 offset-md-3">
+      <div class="text-center">
+        <h1>Sign up</h1>
+        <p>Join our network for the most exclusive benefits</p>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+              <div class="input-group mb-4">
+                <label for="name">
+                  Name
+                  <input type="text" 
+                    class="form-control"
+                    placeholder="Enter your name"
+                    formControlName="name"
+                    [ngClass]="{
+                      'is-invalid': registerForm.get('name').hasError('required') && isSubmitted
+                    }"
+                  >
+                  <label *ngIf="registerForm.get('name').hasError('required') && isSubmitted"
+                   for="name" class="error">Must enter a valid name</label>
+                </label>
+              </div>
+              <div class="input-group mb-4">
+                <label for="email">
+                  E-mail
+                  <input type="text" 
+                    class="form-control"
+                    placeholder="Eg. mail@example.com"
+                    formControlName="email"
+                    [ngClass]="{
+                      'is-invalid': registerForm.get('email').hasError('required') && isSubmitted
+                    }"
+                  >
+                  <label *ngIf="registerForm.get('email').hasError('required') && isSubmitted"
+                   for="email" class="error">Must enter a valid e-mail</label>
+                </label>
+              </div>
+              <div class="input-group mb-5">
+                <label for="password">
+                  Password
+                  <input type="password" 
+                    class="form-control"
+                    placeholder="Enter a password"
+                    formControlName="password"
+                    [ngClass]="{
+                      'is-invalid': registerForm.get('password').hasError('required') && isSubmitted
+                    }"
+                  >
+                  <label *ngIf="registerForm.get('password').hasError('required') && isSubmitted"
+                   for="password" class="error">Must enter a password</label>
+                </label>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">
+                Register
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Confirmation Modal -->
+<ng-template #confirmationModal let-modal>
+  <div class="modal-header d-block">
+    <h3 class="text-center">Registration complete!</h3>
+  </div>
+  <div class="modal-body">
+    <h4 class="text-center">Welcome {{registerForm.get('name').value}}</h4>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-primary" (click)="closeModal()">
+      Got it!
+    </button>
+  </div>
+</ng-template>
+<!-- /Confirmation Modal -->
